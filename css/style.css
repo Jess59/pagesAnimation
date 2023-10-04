@@ -1,0 +1,246 @@
+*{
+    margin:0;
+    padding:0;
+}
+/*************FONTS**************/
+@font-face {
+    font-family: 'Dolce Vita';
+    src: url('../fonts/DolceVita.eot');
+    src: url('../fonts/DolceVita.eot?#iefix') format('embedded-opentype'),
+        url('../fonts/DolceVita.woff2') format('woff2'),
+        url('../fonts/DolceVita.woff') format('woff'),
+        url('../fonts/DolceVita.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Dolce Light';
+    src: url('../fonts/DolceVitaLight.eot');
+    src: url('../fonts/DolceVitaLight.eot?#iefix') format('embedded-opentype'),
+        url('../fonts/DolceVitaLight.woff2') format('woff2'),
+        url('../fonts/DolceVitaLight.woff') format('woff'),
+        url('../fonts/DolceVitaLight.ttf') format('truetype');
+    font-weight: 300;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Neo';
+    src: url('../fonts/NEOTERIC-Bold.eot');
+    src: url('../fonts/NEOTERIC-Bold.eot?#iefix') format('embedded-opentype'),
+        url('../fonts/NEOTERIC-Bold.woff2') format('woff2'),
+        url('../fonts/NEOTERIC-Bold.woff') format('woff'),
+        url('../fonts/NEOTERIC-Bold.ttf') format('truetype');
+    font-weight: bold;
+    font-style: normal;
+    font-display: swap;
+}
+header{
+    height: 80px; /*hauteur du header*/ 
+    display: flex;/*permet à l'image et la nav d'être à coté'*/
+    justify-content: space-between;/*répartition des éléments de dorite (navigation) à gauche (logo) et bord à bord du header*/
+    border: 2px solid green;
+}
+
+header img {
+    height: 50px;
+    margin: 15px;
+}
+
+header nav { 
+    display: flex;
+    align-items: end; /* Envoie les eleents tout en bas de la nav */
+    border: 2px solid red;
+}
+
+header nav ul{
+    display: flex; /* Mettez les éléments de la liste en ligne */
+    height: 30px;
+    list-style: none;/*sup les puces*/
+    
+    align-items: center;
+    justify-content: flex-end;
+    margin: 0 10px;
+}
+
+header nav ul li span {
+    margin: 0 10px; /* Espacement entre le logo et le menu */
+}
+header nav ul li {
+
+    display: flex;
+}
+
+header nav ul li a {
+    text-decoration: none;
+    text-transform: uppercase; /*pour convertir en majuscules les textes*/
+    color: black;
+    font-size: 16px; /* Ajustez la taille de la police du menu */
+    font-weight: bold;
+    letter-spacing: 1px;
+    transition: 0.5s;
+    font-family: Neo;
+}
+
+header nav ul li a:hover, .ici {
+    border-bottom: 8px solid black; /** ajoute une bordure en bas lors du survol de couleur blanche */
+}
+/*main {
+    position: relative; /* Ajoutez une position relative 
+    
+    
+    height: 100vh; Définit la hauteur du main pour couvrir la hauteur de la fenêtre 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+} */
+
+main section{
+    height: calc(100vh - 70px);
+    background: url('../images/fond.jpg') center bottom fixed; /* Utilisez une image de fond et centrez-la */
+    background-size: cover;
+    display: flex;
+    justify-content: center; /*va centrer le h1 + la div et les autres sections sur la largeur*/
+    align-items: center;
+    flex-direction: column;/*va permettre à la div parent et au a d'être l'un au dessus de l'autre*/
+
+}
+
+main section h1 {
+    text-align: center;
+    font-size: 80px;
+    color: white;
+    font-family: Dolce Vita;
+    font-weight: normal;
+}
+section h1::first-line{
+    font-family: 'Dolce Light'; /*change la font de la premier ligne*/
+}
+
+/**************************************************************************************
+pages
+***************************************************************************************/
+section>div {/*cible la div de premier niveau*/
+    display: flex;
+}
+section>div div {
+    width: 150px;
+    height: 150px;
+    margin: 50px;
+    border: 2px solid white;
+}
+
+section a{
+    color: black;
+    padding: 15px 30px;
+    background: white;
+    font-family: "Dolce Vita";
+    letter-spacing: 1px;
+    text-decoration: none;
+    transition: 0.5s;
+}
+
+section a:hover {
+    background: black;
+    color: white;
+}
+/**************************************************************************************
+ROTATION
+***************************************************************************************/
+#rot>div div:first-of-type{
+    transform: rotate(45deg);
+}
+
+#rot>div div:nth-of-type(2):hover{ /*au survol elle tourne*/
+    transform: rotate(45deg);
+}
+
+#rot>div div:nth-of-type(3){ /*au survol elle tourne*/
+    transition: 0.5s;
+}
+
+#rot>div div:nth-of-type(3):hover{ /*au survol elle tourne*/
+    transform: rotate(45deg);
+}
+
+
+/*zoom*/
+#zoom>div div:first-of-type{
+    transform: scale(1.2);
+}
+#zoom>div div:nth-of-type(2):hover{
+    transform: scale(0.8);
+}
+#zoom>div div:nth-of-type(3){
+    transition: 0.5s; /*ajoute l'effet sur la rotation*/
+}
+#zoom>div div:nth-of-type(3):hover{/*au survol ça tourne*/
+    transform: scale(0.3);/*rotation de 45degrès*/
+}
+
+/****Inclinaison***********/
+#incli>div div:first-of-type{
+    transform: skewX(15deg);
+}
+    
+#incli>div div:nth-of-type(2):hover{
+    transform: skewY(15deg);
+}
+
+#incli>div div:nth-of-type(3) {
+    transition: 0.5s;
+}
+
+#incli>div div:nth-of-type(3):hover{
+    transform: skewX(15deg);
+}
+
+/**************Deplacement**********************/
+#depla>div div:first-of-type{
+    transform: translate(10px, 15px);
+}
+    
+#depla>div div:nth-of-type(2):hover{
+    transform: translateY(15px);
+}
+
+#depla>div div:nth-of-type(3) {
+    transition: 0.5s;
+}
+
+#depla>div div:nth-of-type(3):hover{
+    transform: translateX(15px)
+}
+
+
+/****************Origin*********************/
+#ori>div div:first-of-type{
+    transform-origin: top right;/*change le point d'origine de ma transformation.
+    La rotation va se faire par rapport à l'angle haut droit*/
+    transform: rotate(45deg);
+
+}
+
+#ori>div div:nth-of-type(2){
+    transform-origin: bottom left;/*change le point d'origine de ma transformation.
+    La rotation va se faire par rapport à l'angle bas gauche*/
+  
+}
+
+#ori>div div:nth-of-type(2):hover{
+    transform: rotate(45deg);/*change le point d'origine de ma transformation.
+    La rotation va se faire par rapport à l'angle bas gauche*/
+  
+}
+
+#ori>div div:nth-of-type(3){
+    transform-origin:bottom right;/*change le point d'origine de ma transformation.
+    La rotation va se faire part rapport à l'angle bas droit*/
+    transition: 0.5s; /*ajoute l'effet sur le déplacement*/
+}
+#ori>div div:nth-of-type(3):hover{/*au survol (hover) ça se déplace*/
+    transform: rotate(45deg);/*créer une rotation sur la troisieme div*/
+}
